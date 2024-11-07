@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                // Multiple Choice
+                let buttons = document.querySelectorAll('.choice-button');
+                let feedback = document.querySelector('#feedback1');
+                
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        // Reset all buttons
+                        buttons.forEach(b => {
+                            b.style.backgroundColor = '#d9edff';
+                        });
+                        
+                        if (button.dataset.correct === 'true') {
+                            button.style.backgroundColor = '#00ff00';
+                            feedback.innerHTML = 'Correto!';
+                        } else {
+                            button.style.backgroundColor = '#ff0000';
+                            feedback.innerHTML = 'Incorreto!';
+                        }
+                    });
+                });
+
+                // Free Response
+                let checkButton = document.querySelector('#check');
+                let input = document.querySelector('#answer');
+                let feedback2 = document.querySelector('#feedback2');
+                
+                checkButton.addEventListener('click', function() {
+                    let answer = input.value.toLowerCase().trim();
+                    if (answer === '42') {
+                        input.style.backgroundColor = '#00ff00';
+                        feedback2.innerHTML = 'Correto!';
+                    } else {
+                        input.style.backgroundColor = '#ff0000';
+                        feedback2.innerHTML = 'Incorreto!';
+                    }
+                });
+            });
+        </script>
+	</head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+				<!-- TODO: Add multiple choice question here -->
+				<h3>Qual é o nome do computador que calculou a resposta para a vida, o universo e tudo mais?</h3>
+                <button class="choice-button" data-correct="true">Deep Thought</button>
+                <button class="choice-button" data-correct="false">HAL 9000</button>
+                <button class="choice-button" data-correct="false">Marvin</button>
+                <button class="choice-button" data-correct="false">Eddie</button>
+				<p id="feedback1"></p>
+			</div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+				<h3>Qual é a resposta para a vida, o universo e tudo mais?</h3>
+                <input type="text" id="answer" placeholder="Digite sua resposta">
+                <button id="check">Verificar Resposta</button>
+                <p id="feedback2"></p>
+            </div>
+        </div>
+    </body>
+</html>

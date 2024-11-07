@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Nova Tarefa{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header harvard-bg text-white">
+        <h3 class="mb-0">Nova Tarefa</h3>
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="task_name" class="form-label">Nome da Tarefa</label>
+                <input type="text" class="form-control" id="task_name" name="task_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descrição</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{{ url_for('home') }}" class="btn btn-secondary me-md-2">Cancelar</a>
+                <button type="submit" class="btn btn-harvard">Salvar Tarefa</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

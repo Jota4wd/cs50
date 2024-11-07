@@ -1,0 +1,1 @@
+SELECT filme.title FROM movies AS filme JOIN stars AS elenco1 ON filme.id = elenco1.movie_id JOIN people AS pessoa1 ON elenco1.person_id = pessoa1.id JOIN stars AS elenco2 ON filme.id = elenco2.movie_id JOIN people AS pessoa2 ON elenco2.person_id = pessoa2.id WHERE pessoa1.name = 'Johnny Depp' AND pessoa2.name = 'Helena Bonham Carter';

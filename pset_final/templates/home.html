@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}Gerenciador de Tarefas{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h2>Minhas Tarefas</h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{{ url_for('add_task') }}" class="btn btn-harvard">
+            <i class="bi bi-plus-lg"></i> Nova Tarefa
+        </a>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="GET" class="row g-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="search" placeholder="Buscar tarefas..." value="{{ search }}">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" name="status">
+                    <option value="">Todos os status</option>
+                    <option value="Pendente" {% if status_filter == 'Pendente' %}selected{% endif %}>Pendente</option>
+                    <option value="Em Andamento" {% if status_filter == 'Em Andamento' %}selected{% endif %}>Em Andamento</option>
+                    <option value="Concluída" {% if status_filter == 'Concluída' %}selected{% endif %}>Concluída</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-harvard w-100">Filtrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if tasks %}
+    <div class="row">
+        {% for task in tasks %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h5 class="card-title">{{ task.name }}</h5>
+                        <span class="badge bg-{{ task.status_class }}">{{ task.status }}</span>
+                    </div>
+                    <p class="card-text text-muted">
+                        {{ task.description[:100] + '...' if task.description and task.description|length > 100 else task.description or 'Sem descrição' }}
+                    </p>
+                    <div class="task-actions">
+                        <a href="{{ url_for('task_detail', task_id=task.id) }}" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <a href="{{ url_for('toggle_status', task_id=task.id) }}" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </a>
+                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ task.id }}">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    Criado em: {{ task.created_at.strftime('%d/%m/%Y %H:%M') }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Confirmação de Exclusão -->
+        <div class="modal fade" id="deleteModal{{ task.id }}" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirmar Exclusão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza que deseja excluir a tarefa "{{ task.name }}"?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        Nenhuma tarefa encontrada. <a href="{{ url_for('add_task') }}" class="alert-link">Criar nova tarefa</a>
+    </div>
+{% endif %}
+{% endblock %}

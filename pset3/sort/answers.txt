@@ -1,0 +1,83 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+
+time ./sort1 file
+
+sorted5000.txt          reversed5000.txt        random5000.txt
+real    0m0,031s        real    0m0,107s        real    0m0,115s
+user    0m0,008s        user    0m0,089s        user    0m0,102s
+sys     0m0,023s        sys     0m0,019s        sys     0m0,014s
+
+sorted10000.txt         reversed10000.txt       random10000.txt
+real    0m0,047s        real    0m0,370s        real    0m0,428s
+user    0m0,010s        user    0m0,345s        user    0m0,406s
+sys     0m0,037s        sys     0m0,025s        sys     0m0,022s
+
+sorted50000.txt         reversed50000.txt       random50000.txt
+real    0m0,189s        real    0m8,341s        real    0m10,787s
+user    0m0,064s        user    0m8,208s        user    0m10,636s
+sys     0m0,125s        sys     0m0,132s        sys     0m0,150s
+
+Nos arquivos ordenados, os tempos de execução são menores em comparação com os
+arquivos aleatórios e inversamente ordenados.
+O tempo de execução aumenta de forma significativa com o aumento do tamanho do
+arquivo.
+O aumento acentuado nos tempos de execução com o aumento do tamanho do arquivo
+sugere um algoritmo com complexidade quadrática.
+
+sort2 uses: Selection Sort (Merge Sort)
+
+How do you know?:
+
+time ./sort2 file
+
+sorted5000.txt          reversed5000.txt        random5000.txt
+real    0m0,031s        real    0m0,033s        real    0m0,033s
+user    0m0,015s        user    0m0,008s        user    0m0,008s
+sys     0m0,017s        sys     0m0,025s        sys     0m0,025s
+
+sorted10000.txt         reversed10000.txt       random10000.txt
+real    0m0,048s        real    0m0,050s        real    0m0,049s
+user    0m0,011s        user    0m0,019s        user    0m0,019s
+sys     0m0,037s        sys     0m0,031s        sys     0m0,031s
+
+sorted50000.txt         reversed50000.txt       random50000.txt
+real    0m0,218s        real    0m0,216s        real    0m0,234ss
+user    0m0,082s        user    0m0,077s        user    0m0,079ss
+sys     0m0,137s        sys     0m0,136s        sys     0m0,156s
+
+Os tempos de execução são consistentemente baixos e não variam significativamen-
+te com o aumento do tamanho do arquivo.
+O desempenho consistente e o baixo tempo de execução em diferentes cenários
+indicam um algoritmo com complexidade quadrática, porém com melhor desempenho do
+que bubble sort.
+
+sort3 uses: Merge Sort (Selection Sort)
+
+How do you know?:
+
+time ./sort3 file
+
+sorted5000.txt          reversed5000.txt        random5000.txt
+real    0m0,072s        real    0m0,068s        real    0m0,070s
+user    0m0,056s        user    0m0,054s        user    0m0,057s
+sys     0m0,016s        sys     0m0,013s        sys     0m0,013s
+
+sorted10000.txt         reversed10000.txt       random10000.txt
+real    0m0,209s        real    0m0,206s        real    0m0,215s
+user    0m0,182s        user    0m0,184s        user    0m0,186s
+sys     0m0,027s        sys     0m0,023s        sys     0m0,030s
+
+sorted50000.txt         reversed50000.txt       random50000.txt
+real    0m4,316s        real    0m4,236s        real    0m4,304ss
+user    0m4,168s        user    0m4,091s        user    0m4,183ss
+sys     0m0,148s        sys     0m0,145s        sys     0m0,121s
+
+Os tempos de execução são maiores do que os observados em Sort1 e Sort2, porém
+ainda mantêm uma certa consistência entre os cenários.
+O tempo de execução aumenta de forma mais moderada com o aumento do tamanho do
+arquivo.
+O desempenho moderado e consistente, juntamente com tempos de execução
+superiores aos de bubble sort e selection sort, sugere a utilização de um
+algoritmo com complexidade O(n log n), como merge sort.

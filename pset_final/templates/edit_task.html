@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Editar Tarefa{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header harvard-bg text-white">
+        <h3 class="mb-0">Editar Tarefa</h3>
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="task_name" class="form-label">Nome da Tarefa</label>
+                <input type="text" class="form-control" id="task_name" name="task_name" value="{{ task.name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descrição</label>
+                <textarea class="form-control" id="description" name="description" rows="3">{{ task.description }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status">
+                    <option value="Pendente" {% if task.status == 'Pendente' %}selected{% endif %}>Pendente</option>
+                    <option value="Em Andamento" {% if task.status == 'Em Andamento' %}selected{% endif %}>Em Andamento</option>
+                    <option value="Concluída" {% if task.status == 'Concluída' %}selected{% endif %}>Concluída</option>
+                </select>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{{ url_for('home') }}" class="btn btn-secondary me-md-2">Cancelar</a>
+                <button type="submit" class="btn btn-harvard">Atualizar Tarefa</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

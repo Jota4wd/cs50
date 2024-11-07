@@ -1,0 +1,24 @@
+Durante o projeto, trabalhei em várias consultas SQL para extrair informações de um banco de dados de músicas. Comecei revisando a estrutura do banco de dados e as tabelas disponíveis, o que me ajudou a entender como as informações estavam organizadas.
+Um dos principais desafios que enfrentei foi garantir que as consultas fossem escritas corretamente, especialmente ao lidar com subconsultas e filtros. Por exemplo, ao tentar listar as músicas de um artista específico, inicialmente cometi um erro de sintaxe ao referenciar o nome da tabela. Depois de revisar a documentação e testar diferentes abordagens, consegui corrigir o erro.
+Aprendi muito sobre a importância de prestar atenção aos detalhes na escrita de consultas SQL. Além disso, percebi como a prática constante é essencial para se tornar proficiente em SQL. Se eu tivesse que fazer isso novamente, dedicaria mais tempo à fase de planejamento para evitar erros de sintaxe.
+No geral, essa experiência não apenas melhorou minhas habilidades em SQL, mas também me ensinou a importância de uma abordagem metódica na resolução de problemas. Estou animado para aplicar o que aprendi em projetos futuros.
+
+gemini translation
+
+Throughout the project, I worked on various SQL queries to ext:w
+ract information from a
+music database. I began by reviewing the database structure and the available tables, which
+ helped me understand how the information was organized.
+
+One of the main challenges I faced was ensuring that the queries were written correctly,
+especially when dealing with subqueries and filters. For example, when trying to list the songs
+of a specific artist, I initially made a syntax error when referencing the table name. After
+reviewing the documentation and testing different approaches, I was able to correct the error.
+
+I learned a lot about the importance of paying attention to detail when writing SQL queries.
+Additionally, I realized how constant practice is essential to becoming fluent in SQL.
+If I had to do it again, I would dedicate more time to the planning phase to avoid syntax errors.
+
+Overall, this experience not only improved my SQL skills but also taught me the importance of
+a methodical approach to problem-solving.
+I am excited to apply what I have learned in future exercises.

@@ -1,0 +1,40 @@
+The THIEF is: Bruce
+The city the thief ESCAPED TO: New York City
+The ACCOMPLICE is: Robin
+
+
+
+
+
+relatorio:
+O roubo do pato do CS50 ocorreu às 10h15 na padaria da Humphrey Street. Entrevistas foram realizadas hoje com três testemunhas que estavam presentes no momento – cada um dos transcritos das entrevistas menciona a padaria.
+
+
+depoimentos:
+161|Ruth|2023|7|28|Algum momento dentro de dez minutos do roubo, eu vi o ladrão entrar em um carro no estacionamento da padaria e dirigir embora. Se você tiver imagens de segurança do estacionamento da padaria, pode querer procurar por carros que saíram do estacionamento nesse intervalo de tempo.
+
+162|Eugene|2023|7|28|Eu não sei o nome do ladrão, mas era alguém que reconheci. Mais cedo esta manhã, antes de chegar à padaria de Emma, eu estava passando pelo caixa eletrônico na Leggett Street e vi o ladrão lá sacando algum dinheiro.
+
+163|Raymond|2023|7|28|Enquanto o ladrão estava saindo da padaria, eles ligaram para alguém que conversou com eles por menos de um minuto. Na ligação, ouvi o ladrão dizer que estava planejando pegar o primeiro voo fora de Fiftyville amanhã. O ladrão então pediu à pessoa do outro lado da linha para comprar a passagem do voo.
+
+191|Lily|2023|7|28|Nosso vizinho tribunal tem um galo muito irritante que canta alto às 6h todos os dias. Meus filhos Robert e Patrick levaram o galo para uma cidade distante, muito distante, para que nunca mais nos incomode. Meus filhos chegaram com sucesso em Paris.
+
+
+Kenny, Taylor e Bruce:
+
+Bruce (placa 94KL13X): saiu às 10:18
+Taylor (placa 1106N58): saiu às 10:35
+
+Bruce ligou para Robin (duração 45s)
+Taylor ligou para James (duração 43s)
+Kenny ligou para Doris (duração 55s)
+
+Taylor saiu às 10:35 (fora dos 10 minutos)
+
+Bruce parece ser o ladrão porque:
+
+saque no ATM da Leggett Street
+saiu da padaria 3 minutos após o roubo (dentro dos 10 minutos mencionados)
+fez uma ligação curta
+estava no voo para New York City
+Robin (ligaçao do Bruce) provavelmente eh seu cumplice que comprou a passagem do voo conforme mencionado no depoimento de Raymond.
